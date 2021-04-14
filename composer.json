@@ -1,0 +1,42 @@
+{
+    "name": "heimseiten/contao-article-image-bundle",
+    "description": "Artikelbild für Contao",
+    "keywords": [
+        "parallax"
+    ],
+    "type": "contao-bundle",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "heimseiten.de - Webdesign aus Köln",
+            "email": "info@heimseiten.de",
+            "homepage": "https://www.heimseiten.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/heimseiten/contao-article-image-bundle/issues",
+        "source": "https://github.com/heimseiten/contao-article-image-bundle"
+    },
+    "require": {
+        "contao/core-bundle": "^4.4",
+        "heimseiten/contao-parallax-bundle": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Heimseiten\\ContaoArticleImageBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config",
+            "src/Resources/contao/dca",
+            "src/Resources/contao/languages",
+            "src/Resources/contao/templates"
+        ]
+    },
+    "extra": {
+        "contao-manager-plugin": "Heimseiten\\ContaoArticleImageBundle\\ContaoManager\\Plugin"
+    }
+}

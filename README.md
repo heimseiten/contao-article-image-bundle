@@ -1,0 +1,1 @@
+# Artikelbild für Contao
