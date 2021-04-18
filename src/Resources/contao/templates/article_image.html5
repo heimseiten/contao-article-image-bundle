@@ -1,0 +1,4 @@
+<?= '{{picture::' . $this->articleImage . '?size=' . $this->sizeId . '}}'; ?>
+<?= $this->sizeId ?>
+<?= $this->bg_parallax ?>
+<?php $this->showTemplateVars(); ?>
