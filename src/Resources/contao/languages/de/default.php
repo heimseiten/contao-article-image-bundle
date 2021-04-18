@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['TL_LANG']['tl_article']['articleBg'] = 'Hintergrundbild und/oder -video';
+$GLOBALS['TL_LANG']['tl_article']['articleBgLegend'] = 'Hintergrundbild und/oder -video';
 $GLOBALS['TL_LANG']['tl_article']['articleImage'] = array ( 'Artikelhintergrundbild', '' );
 $GLOBALS['TL_LANG']['tl_article']['size'] = array ( 'Artikelhintergrundbildgröße', 'Aktuell werden nur vordefinierte Bildgrößen unterstützt!' );
 $GLOBALS['TL_LANG']['tl_article']['articleVideo'] = array ( 'Artikelhintergrundvideo', '' );

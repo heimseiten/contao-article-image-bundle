@@ -17,7 +17,7 @@ class HooksListener
             $template = new FrontendTemplate('article_image');
 
             $template->articleImage = $arrData['articleImage'];
-            $template->sizeId = deserialize($arrData['size'])[2];
+            $template->articleImageSize = $arrData['articleImageSize'];
             $template->articleVideo = $arrData['articleVideo'];
             $template->noBgVideoLoop = $arrData['noBgVideoLoop'];
             $template->viewBgVideoOnMobile = $arrData['viewBgVideoOnMobile'];
@@ -37,7 +37,6 @@ class HooksListener
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
 
             $objTemplate->class .= ' ' . implode(' ', $arrClasses);
-            $objTemplate->style .= 'margin-top:20px;';
         }
     }
 

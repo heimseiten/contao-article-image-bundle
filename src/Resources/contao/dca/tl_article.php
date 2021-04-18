@@ -4,16 +4,16 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 use Contao\System;
 
 PaletteManipulator::create()
-    ->addLegend('article_bg', 'title_legend', PaletteManipulator::POSITION_AFTER)
-    ->addField('articleImage', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('articleVideo', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('size', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('verticalBgShift', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('viewBgImageOnMobile', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('viewBgVideoOnMobile','article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('bgParallax', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('noBgVideoLoop', 'article_bg', PaletteManipulator::POSITION_APPEND)
-    ->addField('BgCssFilter', 'article_bg', PaletteManipulator::POSITION_APPEND)
+    ->addLegend('articleBgLegend', 'title_legend', PaletteManipulator::POSITION_AFTER)
+    ->addField('articleImage', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('articleVideo', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('articleImageSize', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('verticalBgShift', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('viewBgImageOnMobile', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('viewBgVideoOnMobile','articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('bgParallax', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('noBgVideoLoop', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('BgCssFilter', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('default', 'tl_article');
 
 $GLOBALS['TL_DCA']['tl_article']['fields']['articleImage'] = [ 
@@ -28,8 +28,8 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['articleVideo'] = [
     'eval' => array('tl_class'  => 'w50', 'fieldType' => 'radio', 'filesOnly' => true, 'extensions' => 'mp4' ),
     'sql'       => "blob NULL"
 ];
-$GLOBALS['TL_DCA']['tl_article']['fields']['size'] = [
-    'label' => &$GLOBALS['TL_LANG']['tl_article']['size'],
+$GLOBALS['TL_DCA']['tl_article']['fields']['articleImageSize'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_article']['articleImageSize'],
     'exclude' => true,
     'inputType' => 'imageSize',
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
