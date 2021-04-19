@@ -14,6 +14,11 @@ PaletteManipulator::create()
     ->addField('bgParallax', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
     ->addField('noBgVideoLoop', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
     ->addField('BgCssFilter', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    
+    ->addLegend('articleWidthHeight', 'articleBgLegend', PaletteManipulator::POSITION_AFTER)
+    ->addField('articleMaxWidth', 'articleWidthHeight', PaletteManipulator::POSITION_APPEND)
+    ->addField('articleMinHeight', 'articleWidthHeight', PaletteManipulator::POSITION_APPEND)
+    
     ->applyToPalette('default', 'tl_article');
 
 $GLOBALS['TL_DCA']['tl_article']['fields']['articleImage'] = [ 
@@ -81,3 +86,16 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['BgCssFilter'] = [
     'eval'      => array('tl_class'=>'clr'),
     'sql'       => "text NULL"
 ];
+$GLOBALS['TL_DCA']['tl_article']['fields']['articleMaxWidth'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_article']['articleMaxWidth'],
+    'inputType' => 'text',
+    'eval'      => array('tl_class'=>'w50'),
+    'sql'       => "text NULL"
+];
+$GLOBALS['TL_DCA']['tl_article']['fields']['articleMinHeight'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_article']['articleMinHeight'],
+    'inputType' => 'text',
+    'eval'      => array('tl_class'=>'w50'),
+    'sql'       => "text NULL"
+];
+
