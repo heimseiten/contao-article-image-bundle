@@ -1,9 +1,10 @@
 <?php
 
-  if ($this->viewBgImageOnMobile) { $this->style = $this->style. ' --background-image-mobile: none;'; }  
-  if ($this->viewBgVideoOnMobile) { $this->style = $this->style. ' --background-video-mobile: none;'; }  
-
   $styles = '';
+  
+  if ($this->viewBgImageOnMobile) { $style .= ' --background_image_mobile: none;'; }  
+  if ($this->viewBgVideoOnMobile) { $style .= ' --background_video_mobile: none;'; }  
+
   if ($this->BgCssFilter) {
     $styles .= ' filter:'.$this->BgCssFilter.';';
   }   

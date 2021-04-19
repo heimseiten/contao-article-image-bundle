@@ -7,6 +7,6 @@
     video { min-height: 100%; min-width: 100%; object-fit: cover; 
         @media(min-width:1921px){ width: 100%; }
     } 
-    &.image { @media(max-width:1023px){ display: var(--background-image-mobile); } }
-    &.video { @media(max-width:1023px){ display: var(--background-video-mobile); } }
+    &.image { @media(max-width:1023px){ display: var(--background_image_mobile); } }
+    &.video { @media(max-width:1023px){ display: var(--background_video_mobile); } }
 }
