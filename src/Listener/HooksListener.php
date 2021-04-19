@@ -13,7 +13,7 @@ class HooksListener
     
     public function onCompileArticle(FrontendTemplate $objTemplate, array $arrData, Module $module): void
     {
-        if (TL_MODE == 'FE') {
+        if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
             $template = new FrontendTemplate('article_image');
 
             $template->articleImage = $arrData['articleImage'];
@@ -25,18 +25,22 @@ class HooksListener
             $template->verticalBgShift = $arrData['verticalBgShift'];
             $template->bgParallax = $arrData['bgParallax'];
             $template->BgCssFilter = $arrData['BgCssFilter'];
+            $template->articleMinHeight = $arrData['articleMinHeight'];
+            $template->articleMaxWidth = $arrData['articleMaxWidth'];
             
             $elements = $objTemplate->elements;
             array_unshift($elements, $template->parse());
             $objTemplate->elements = $elements;
+
+            $objTemplate->style .= '--test: 34px;';
         }
     }
 
     public function onParseTemplate(Template $objTemplate)
     {
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
-            if ($arrData['articleMaxWidth']) { $objTemplate->style .= 'max-width: ' . $arrData['articleMaxWidth'] . ';'; }
-            if ($arrData['articleMinHeight']) { $objTemplate->style .= 'min-height: ' . $arrData['articleMinHeight'] . ';'; }
+            if ($objTemplate->articleMaxWidth) { $objTemplate->style .= 'max-width: ' . $objTemplate->articleMaxWidth . ';'; }
+            if ($objTemplate->articleMinHeight) { $objTemplate->style .= 'min-height: ' . $objTemplate->articleMinHeight . ';'; }
         }
     }
 
