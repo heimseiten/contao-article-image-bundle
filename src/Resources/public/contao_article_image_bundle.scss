@@ -1,4 +1,4 @@
-.mod_article > .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; padding: 0; z-index: 1; 
+.mod_article > .article_bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; padding: 0; z-index: 1; 
     &.parallax .inside { transform: translateY( calc( var(--scrolled_since_element) / 6 ) ); }
     .inside { min-height: 100% !important; 
         //@media(max-width:1200px){ margin-top: -25% !important; } 
