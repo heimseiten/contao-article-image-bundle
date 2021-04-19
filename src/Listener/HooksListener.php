@@ -35,8 +35,8 @@ class HooksListener
     public function onParseTemplate(Template $objTemplate)
     {
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
-            $objTemplate->style .= 'max-width: ' . $arrData['articleMaxWidth'];
-            $objTemplate->style .= 'min-height: ' . $arrData['articleMinHeight'];
+            if ($arrData['articleMaxWidth']) { $objTemplate->style .= 'max-width: ' . $arrData['articleMaxWidth'] . ';'; }
+            if ($arrData['articleMinHeight']) { $objTemplate->style .= 'min-height: ' . $arrData['articleMinHeight'] . ';'; }
         }
     }
 

@@ -11,6 +11,6 @@ $GLOBALS['TL_LANG']['tl_article']['verticalBgShift'] = array ( 'Hintergrund vert
 $GLOBALS['TL_LANG']['tl_article']['bgParallax'] = array ( 'Parallax-Effekt', '' );
 $GLOBALS['TL_LANG']['tl_article']['BgCssFilter'] = array ( 'CSS-Filter', 'Bspw. opacity(.2) grayscale(1) usw. siehe Bsp. auf <a href="https://blog.kulturbanause.de/2015/03/css-filter-effekte/" target="_blank">kulturbanause.de</a>' );
 
-$GLOBALS['TL_LANG']['tl_article']['articleWidthHeight'] = 'max. Artikelbrerite, min. Artikelhöhe';
+$GLOBALS['TL_LANG']['tl_article']['articleWidthHeight'] = 'max. Artikelbreite, min. Artikelhöhe';
 $GLOBALS['TL_LANG']['tl_article']['articleMaxWidth'] = array ( 'maximale Breite des Artikels', 'Bspw. 1024px oder 50vw' );
 $GLOBALS['TL_LANG']['tl_article']['articleMinHeight'] = array ( 'minimale Höhe des Artikels', 'Bspw. 30vw. vw bedeutet "Viewport Width", also Prozent der Breite des Bildschirmes. vh bedeutet "Viewport Height", also Prozent der Höhe des Bildschirmes' );
