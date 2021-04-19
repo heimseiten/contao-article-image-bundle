@@ -2,7 +2,7 @@
 
 $GLOBALS['TL_LANG']['tl_article']['articleBgLegend'] = 'Hintergrundbild und/oder -video';
 $GLOBALS['TL_LANG']['tl_article']['articleImage'] = array ( 'Artikelhintergrundbild', '' );
-$GLOBALS['TL_LANG']['tl_article']['size'] = array ( 'Artikelhintergrundbildgröße', 'Aktuell werden nur vordefinierte Bildgrößen unterstützt!' );
+$GLOBALS['TL_LANG']['tl_article']['articleImageSize'] = array ( 'Artikelhintergrundbildgröße', 'Aktuell werden nur vordefinierte Bildgrößen unterstützt!' );
 $GLOBALS['TL_LANG']['tl_article']['articleVideo'] = array ( 'Artikelhintergrundvideo', '' );
 $GLOBALS['TL_LANG']['tl_article']['noBgVideoLoop'] = array ( 'Video nicht in Endlosschleife abspielen', '' );
 $GLOBALS['TL_LANG']['tl_article']['viewBgVideoOnMobile'] = array ( 'Video in der mobilen Ansicht ausblenden', '' );
