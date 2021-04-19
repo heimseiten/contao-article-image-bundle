@@ -1,1 +1,1 @@
-# Artikelbild für Contao
+# Artikelhintergrundbild oder/und -video

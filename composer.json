@@ -1,7 +1,8 @@
 {
     "name": "heimseiten/contao-article-image-bundle",
-    "description": "Artikelbild für Contao",
+    "description": "Artikelhintergrundbild oder/und -video mit Parallax-Effekt.",
     "keywords": [
+        "Hintergund",
         "parallax"
     ],
     "type": "contao-bundle",
@@ -19,7 +20,7 @@
         "source": "https://github.com/heimseiten/contao-article-image-bundle"
     },
     "require": {
-        "contao/core-bundle": "^4.4",
+        "contao/core-bundle": "^4.9",
         "heimseiten/contao-parallax-bundle": "^1.0"
     },
     "autoload": {
