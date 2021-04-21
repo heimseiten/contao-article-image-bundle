@@ -1,5 +1,5 @@
 <?php
-
+  
   $styles = '';
   
   if ($this->viewBgImageOnMobile) { $styles .= ' --background_image_mobile: none;'; }  
@@ -25,6 +25,10 @@
       echo '<div class="article_bg image'.$parallax_class.'">';
         echo '<div class="inside" style="'.$styles.'">{{picture::'.$this->articleImage.'?size=' . deserialize($this->articleImageSize)[2] . '}}</div>';
       echo '</div>';
+  }
+
+  if ( $this->articleMaxWidth) {
+      echo '<div class="inside" style="' . 'width:' . $this->articleMaxWidth . ';max-width:100%;margin-left:auto;margin-right:auto;">';    
   }
 
 ?>
