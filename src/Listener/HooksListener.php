@@ -42,6 +42,7 @@ class HooksListener
     {
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
             if ($objTemplate->articleMinHeight) { $objTemplate->style .= 'min-height: ' . $objTemplate->articleMinHeight . ';'; }
+            if ($objTemplate->articleMaxWidth) { $objTemplate->class .= ' has_inside'; }
         }
     }
 
