@@ -14,7 +14,7 @@ class HooksListener
     public function onCompileArticle(FrontendTemplate $objTemplate, array $arrData, Module $module): void
     {
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
-            $mod_article_before_content_elements = new FrontendTemplate('mod_article_before_content_elements');
+            $mod_article_before_content_elements = new FrontendTemplate('caib_mod_article_before_content_elements');
             $mod_article_before_content_elements->articleImage = $arrData['articleImage'];
             $mod_article_before_content_elements->articleImageSize = $arrData['articleImageSize'];
             $mod_article_before_content_elements->articleVideo = $arrData['articleVideo'];
