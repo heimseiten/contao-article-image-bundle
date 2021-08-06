@@ -27,8 +27,4 @@
       echo '</div>';
   }
 
-  if ( $this->articleMaxWidth) {
-      echo '<div class="inside" style="' . 'width:' . $this->articleMaxWidth . ';max-width:100%;margin-left:auto;margin-right:auto;">';    
-  }
-
 ?>
