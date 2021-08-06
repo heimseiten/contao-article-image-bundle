@@ -21,7 +21,8 @@
     },
     "require": {
         "contao/core-bundle": "^4.9",
-        "heimseiten/contao-parallax-bundle": "^1.0"
+        "heimseiten/contao-parallax-bundle": "^1.0",
+        "heimseiten/contao-article-width-height-bundle": "^1.0"
     },
     "autoload": {
         "psr-4": {
