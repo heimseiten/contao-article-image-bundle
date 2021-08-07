@@ -5,5 +5,5 @@
         @media(min-width:1921px){ width: 100%; }
     } 
     &.image .inside { @media(max-width:1023px){ display: var(--background_image_mobile, block); } }
-    &.video .inside { @media(max-width:1023px){ display: var(--background_video_mobile), block; } }
+    &.video .inside { @media(max-width:1023px){ display: var(--background_video_mobile, block); } }
 }
