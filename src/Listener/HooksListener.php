@@ -33,10 +33,10 @@ class HooksListener
     public function onParseTemplate(Template $objTemplate)
     {
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
-            if ($objTemplate->bgColor[0]) { 
+            if ( deserialize($objTemplate->bgColor)[0] ) { 
                 $objTemplate->style .= ' --bg_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->bgColor)[0], deserialize($objTemplate->bgColor)[1]) .';';
             }
-            if ($objTemplate->fontColor[0]) { 
+            if ( deserialize($objTemplate->fontColor)[0] ) { 
                 $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->fontColor)[0], deserialize($objTemplate->fontColor)[1]) .';';
             }
         }
