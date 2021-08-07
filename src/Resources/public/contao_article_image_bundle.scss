@@ -7,3 +7,8 @@
     &.image .inside { @media(max-width:1023px){ display: var(--background_image_mobile, block); } }
     &.video .inside { @media(max-width:1023px){ display: var(--background_video_mobile, block); } }
 }
+
+html body .mod_article { background: var(--bg_color);
+    &, h1, h2, h3, h4, h5, h6, p, a { color: var(--font_color); }
+    a { text-decoration: underline; }
+}
