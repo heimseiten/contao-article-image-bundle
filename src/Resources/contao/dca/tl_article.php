@@ -14,7 +14,9 @@ PaletteManipulator::create()
     ->addField('bgParallax', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
     ->addField('noBgVideoLoop', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
     ->addField('BgCssFilter', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-        
+    ->addField('bgColor', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addField('fontColor', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    
     ->applyToPalette('default', 'tl_article');
 
 $GLOBALS['TL_DCA']['tl_article']['fields']['articleImage'] = [ 
@@ -79,6 +81,20 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['bgParallax'] = [
 $GLOBALS['TL_DCA']['tl_article']['fields']['BgCssFilter'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['BgCssFilter'],
     'inputType' => 'text',
-    'eval'      => array('tl_class'=>'clr'),
+    'eval'      => array('tl_class'=>'w50'),
+    'sql'       => "text NULL"
+];
+
+$GLOBALS['TL_DCA']['tl_article']['fields']['bgColor'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_article']['bgColor'],
+    'inputType' => 'text',
+    'eval'      => array('maxlength'=>6, 'multiple'=>true, 'size'=>2, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 clr wizard'),
+    'sql'       => "text NULL"
+];
+
+$GLOBALS['TL_DCA']['tl_article']['fields']['fontColor'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_article']['fontColor'],
+    'inputType' => 'text',
+    'eval'      => array('maxlength'=>6, 'multiple'=>true, 'size'=>2, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 wizard'),
     'sql'       => "text NULL"
 ];
