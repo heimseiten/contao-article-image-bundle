@@ -88,13 +88,13 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['BgCssFilter'] = [
 $GLOBALS['TL_DCA']['tl_article']['fields']['bgColor'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['bgColor'],
     'inputType' => 'text',
-    'eval'      => array('maxlength'=>6, 'multiple'=>true, 'size'=>2, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 clr wizard'),
+    'eval'      => array('maxlength'=>7, 'multiple'=>true, 'size'=>2, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 clr wizard'),
     'sql'       => "text NULL"
 ];
 
 $GLOBALS['TL_DCA']['tl_article']['fields']['fontColor'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['fontColor'],
     'inputType' => 'text',
-    'eval'      => array('maxlength'=>6, 'multiple'=>true, 'size'=>2, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 wizard'),
+    'eval'      => array('maxlength'=>7, 'multiple'=>true, 'size'=>2, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 wizard'),
     'sql'       => "text NULL"
 ];
