@@ -13,6 +13,6 @@ html {
 }
 
 html body .mod_article { background: var(--bg_color, var(--article_bg_color, #fff));
-    &, h1, h2, h3, h4, h5, h6, p, a { color: var(--font_color, #444); }
+    &, h1, h2, h3, h4, h5, h6, p, a { color: var(--font_color); }
     a { text-decoration: underline; }
 }
