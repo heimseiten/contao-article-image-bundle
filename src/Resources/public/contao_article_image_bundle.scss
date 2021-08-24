@@ -8,4 +8,4 @@
     &.video .inside { @media(max-width:1023px){ display: var(--background_video_mobile, block); } }
 }
 
-html body .mod_article { background: var(--article_bg_color, #fff); }
+html body .mod_article { background-color: var(--article_bg_color, #fff); }
