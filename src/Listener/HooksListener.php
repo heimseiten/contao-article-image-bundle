@@ -35,9 +35,11 @@ class HooksListener
         if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
             if ( deserialize($objTemplate->bgColor)[0] ) { 
                 $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->bgColor)[0], deserialize($objTemplate->bgColor)[1]) .';';
+                $objTemplate->class .= ' article_bg_color';
             }
             if ( deserialize($objTemplate->fontColor)[0] ) { 
                 $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->fontColor)[0], deserialize($objTemplate->fontColor)[1]) .';';
+                $objTemplate->class .= ' font_color';
             }
         }
     }
