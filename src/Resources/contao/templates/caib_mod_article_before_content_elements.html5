@@ -23,7 +23,7 @@
 
   if ($this->articleImage) {
       echo '<div class="article_bg image'.$parallax_class.'">';
-        echo '<div class="inside" style="'.$styles.'">{{picture::'.$this->articleImage.'?size=' . deserialize($this->articleImageSize)[2] . '}}</div>';
+        echo '<div class="inside" style="'.$styles.'">{{picture::'.\FilesModel::findByPk(deserialize($this->articleImage))->path.'?size=' . deserialize($this->articleImageSize)[2] . '}}</div>';
       echo '</div>';
   }
 
