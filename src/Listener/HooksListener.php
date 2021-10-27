@@ -41,6 +41,9 @@ class HooksListener
                 $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->fontColor)[0], deserialize($objTemplate->fontColor)[1]) .';';
                 $objTemplate->class .= ' font_color';
             }
+            if ( $objTemplate->articleImage ) { 
+                $objTemplate->class .= ' has_img';
+            }
         }
     }
 }
