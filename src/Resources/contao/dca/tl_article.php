@@ -2,6 +2,7 @@
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 use Contao\System;
+use Contao\BackendUser;
 
 PaletteManipulator::create()
     ->addLegend('articleBgLegend', 'layout_legend', PaletteManipulator::POSITION_BEFORE)
@@ -22,7 +23,12 @@ PaletteManipulator::create()
 $GLOBALS['TL_DCA']['tl_article']['fields']['articleImage'] = [ 
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['articleImage'],
     'inputType' => 'fileTree',
-    'eval' => array('tl_class'  => 'w50', 'fieldType' => 'radio', 'filesOnly' => true, 'extensions' => \Config::get('validImageTypes') ),
+    'eval'      => array(
+        'tl_class'  => 'w50', 
+        'fieldType' => 'radio', 
+        'filesOnly' => true, 
+		'extensions' => implode( ',', System::getContainer()->getParameter('contao.image.valid_extensions') ),
+    ),
     'sql'       => "blob NULL"
 ];
 $GLOBALS['TL_DCA']['tl_article']['fields']['articleVideo'] = [ 
@@ -44,7 +50,7 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['articleImageSize'] = [
         'tl_class' => 'clr w50',
     ],
     'options_callback' => function () {
-        return System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(BackendUser::getInstance());
+        return System::getContainer()->get('contao.image.sizes')->getOptionsForUser(BackendUser::getInstance());
     },
     'sql' => "varchar(64) NOT NULL default ''"
 ];

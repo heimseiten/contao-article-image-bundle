@@ -7,6 +7,7 @@ namespace Heimseiten\ContaoArticleImageBundle\Listener;
 use Contao\FrontendTemplate;
 use Contao\Template;
 use Contao\Module;
+use Contao\StringUtil;
 
 class HooksListener
 {
@@ -33,12 +34,12 @@ class HooksListener
     public function onParseTemplate(Template $objTemplate)
     {
         if ($objTemplate->type == 'article') {
-            if ( deserialize($objTemplate->bgColor)[0] ) { 
-                $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->bgColor)[0], deserialize($objTemplate->bgColor)[1]) .';';
+            if ( StringUtil::deserialize($objTemplate->bgColor)[0] ) { 
+                $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->bgColor)[0], StringUtil::deserialize($objTemplate->bgColor)[1]) .';';
                 $objTemplate->class .= ' article_bg_color';
             }
-            if ( deserialize($objTemplate->fontColor)[0] ) { 
-                $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->fontColor)[0], deserialize($objTemplate->fontColor)[1]) .';';
+            if ( StringUtil::deserialize($objTemplate->fontColor)[0] ) { 
+                $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->fontColor)[0], StringUtil::deserialize($objTemplate->fontColor)[1]) .';';
                 $objTemplate->class .= ' font_color';
             }
             if ( $objTemplate->articleImage ) { 

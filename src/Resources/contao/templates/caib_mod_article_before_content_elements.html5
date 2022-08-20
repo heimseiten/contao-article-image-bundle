@@ -1,4 +1,6 @@
 <?php
+  use Contao\StringUtil;  
+  use Contao\FilesModel;
   
   $styles = '';
   
@@ -15,15 +17,15 @@
 
   if ($this->articleVideo) {
       if (!$this->noBgVideoLoop) { $bg_bg_video_loop = ' loop'; }
-      if ($this->articleImage) { $bg_video_poster = '{{file::' . deserialize($this->articleImage) . '}}'; }
+      if ($this->articleImage) { $bg_video_poster = '{{file::' . StringUtil::deserialize($this->articleImage) . '}}'; }
       echo '<div class="article_bg video'.$parallax_class.'" style="'.$styles.'"><div class="inside" style="margin-top: -'.$this->verticalBgShift.'%;">';
-        echo '<video class="v_'. $this->id .'" muted autoplay playsinline'.$bg_bg_video_loop.' poster="/'.$bg_video_poster.'"><source src="{{file::' . deserialize($this->articleVideo) . '}}" type="video/mp4"></video>';
+        echo '<video class="v_'. $this->id .'" muted autoplay playsinline'.$bg_bg_video_loop.' poster="/'.$bg_video_poster.'"><source src="{{file::' . StringUtil::deserialize($this->articleVideo) . '}}" type="video/mp4"></video>';
       echo '</div></div>';
   }
 
   if ($this->articleImage) {
       echo '<div class="article_bg image'.$parallax_class.'">';
-        echo '<div class="inside" style="'.$styles.'">{{picture::'.\FilesModel::findByPk(deserialize($this->articleImage))->path.'?size=' . deserialize($this->articleImageSize)[2] . '}}</div>';
+        echo '<div class="inside" style="'.$styles.'">{{picture::'.FilesModel::findByPk(StringUtil::deserialize($this->articleImage))->path.'?size=' . StringUtil::deserialize($this->articleImageSize)[2] . '}}</div>';
       echo '</div>';
   }
 
