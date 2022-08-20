@@ -12,7 +12,7 @@ class HooksListener
 {
     public function onCompileArticle(FrontendTemplate $objTemplate, array $arrData, Module $module): void
     {
-        if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
+        if ($objTemplate->type == 'article') {
             $mod_article_before_content_elements = new FrontendTemplate('caib_mod_article_before_content_elements');
             $mod_article_before_content_elements->articleImage = $arrData['articleImage'];
             $mod_article_before_content_elements->articleImageSize = $arrData['articleImageSize'];
@@ -32,7 +32,7 @@ class HooksListener
 
     public function onParseTemplate(Template $objTemplate)
     {
-        if (TL_MODE == 'FE' && $objTemplate->type == 'article') {
+        if ($objTemplate->type == 'article') {
             if ( deserialize($objTemplate->bgColor)[0] ) { 
                 $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(deserialize($objTemplate->bgColor)[0], deserialize($objTemplate->bgColor)[1]) .';';
                 $objTemplate->class .= ' article_bg_color';
