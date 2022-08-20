@@ -21,6 +21,7 @@
     },
     "require": {
         "contao/core-bundle": "^4.9 || ^5.0"
+        "heimseiten/contao-parallax-bundle": "^1.0"
     },
     "autoload": {
         "psr-4": {
