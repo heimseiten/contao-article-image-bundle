@@ -22,7 +22,7 @@
     "require": {
         "contao/core-bundle": "^5.0",
         "heimseiten/contao-parallax-bundle": "^1.0",
-        "heimseiten/contao-article-width-height-bundle": "^1.0"
+        "heimseiten/contao-article-width-height-bundle": "^1.1"
     },
     "autoload": {
         "psr-4": {
