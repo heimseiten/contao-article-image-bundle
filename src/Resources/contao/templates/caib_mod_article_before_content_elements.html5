@@ -3,6 +3,7 @@
   use Contao\FilesModel;
   
   $styles = '';
+  $parallax_class = '';
   
   if ($this->viewBgImageOnMobile) { $styles .= ' --background_image_mobile: none;'; }  
   if ($this->viewBgVideoOnMobile) { $styles .= ' --background_video_mobile: none;'; }  
