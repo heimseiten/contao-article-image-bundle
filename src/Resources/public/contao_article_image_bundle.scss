@@ -1,5 +1,11 @@
 .mod_article .article_bg {
-    position: absolute; left: 0; top: 0; width: 100%; height: 100%; padding: 0; z-index: 1; 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    padding: 0; 
+    z-index: 1; 
     .inside { min-height: 100%; height: 100%; }
     img { object-fit: cover; min-height: 100%; width: 100%; } 
     video { min-height: 100%; min-width: 100%; object-fit: cover; 
@@ -10,6 +16,10 @@
 }
 
 html body .mod_article { position: relative;
+	&.has_img {
+		--article_min_height: 26vw;
+		--article_inside_width: 100%;
+	}
     &.article_bg_color { background: var(--article_bg_color, #fff); }
     &.font_color, &.font_color .rte { color: var(--font_color); 
         a { color: var(--font_color); 
