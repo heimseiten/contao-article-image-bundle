@@ -11,7 +11,7 @@
 
 html body .mod_article { position: relative;
     &.article_bg_color { background: var(--article_bg_color, #fff); }
-    &.font_color { color: var(--font_color); 
+    &.font_color, &.font_color .rte { color: var(--font_color); 
         a { color: var(--font_color); 
             &:hover { color: var(--font_color); text-decoration: underline; }
         }
