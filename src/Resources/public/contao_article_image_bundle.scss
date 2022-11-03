@@ -18,7 +18,6 @@
 html body .mod_article { position: relative;
 	&.has_img {
 		--article_min_height: 26vw;
-		--article_inside_width: 100%;
 	}
     &.article_bg_color { background: var(--article_bg_color, #fff); }
     &.font_color, &.font_color .rte { color: var(--font_color); 
