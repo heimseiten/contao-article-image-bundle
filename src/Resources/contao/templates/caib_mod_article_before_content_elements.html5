@@ -13,8 +13,9 @@
 
   if ($this->bgParallax) {
     $parallax_class = ' jarallax';
-      $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaojarallax/jarallax.min.js"></script>';
-      $GLOBALS['TL_CSS'][] = '/bundles/heimseitencontaojarallax/jarallax.css|static';
+    $GLOBALS['TL_CSS'][] = '/bundles/heimseitencontaojarallax/jarallax.css|static';
+    $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaojarallax/jarallax.min.js"></script>';
+    $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaoarticleimage/jarallax_settings.js"></script>';
   }
 
   if ($this->articleVideo) {
