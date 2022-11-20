@@ -12,8 +12,9 @@
   if ($this->verticalBgShift) { $styles .= ' margin-top: -'.$this->verticalBgShift.'%;'; }
 
   if ($this->bgParallax) {
-    $parallax_class = ' parallax';
-    $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaoparallax/parallax.js"></script>'; 
+    $parallax_class = ' jarallax';
+      $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaojarallax/jarallax.min.js"></script>';
+      $GLOBALS['TL_CSS'][] = '/bundles/heimseitencontaojarallax/jarallax.css|static';
   }
 
   if ($this->articleVideo) {
