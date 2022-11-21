@@ -1,6 +1,8 @@
 <?php
 
-$GLOBALS['TL_LANG']['tl_article']['articleBgLegend'] = 'Hintergrundbild/-video/-farbe';
+$GLOBALS['TL_LANG']['tl_article']['articleBgLegend'] = 'Hintergrundbild';
+$GLOBALS['TL_LANG']['tl_article']['articleBgLegendVideo'] = 'Hintergrundvideo';
+$GLOBALS['TL_LANG']['tl_article']['articleBgLegendColor'] = 'Hintergrund- und Schriftfarbe';
 $GLOBALS['TL_LANG']['tl_article']['articleImage'] = array ( 'Bild', '' );
 $GLOBALS['TL_LANG']['tl_article']['articleImageSize'] = array ( 'Bildgröße', 'Aktuell werden nur vordefinierte Bildgrößen unterstützt!' );
 $GLOBALS['TL_LANG']['tl_article']['articleVideo'] = array ( 'Video', '' );
