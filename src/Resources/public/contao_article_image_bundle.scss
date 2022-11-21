@@ -33,3 +33,5 @@ html body .mod_article { position: relative;
         }
     }
 }
+
+.mod_article:first-child .article_bg.jarallax picture { max-height: var(--element-height); }
