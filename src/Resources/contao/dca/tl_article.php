@@ -6,17 +6,18 @@ use Contao\BackendUser;
 
 PaletteManipulator::create()
     ->addLegend('articleBgLegend', 'layout_legend', PaletteManipulator::POSITION_BEFORE)
-    ->addField('articleImage', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('articleVideo', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('articleImageSize', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('verticalBgShift', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('viewBgImageOnMobile', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('viewBgVideoOnMobile','articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('bgParallax', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('noBgVideoLoop', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('BgCssFilter', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('bgColor', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
-    ->addField('fontColor', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+        ->addField('articleImage', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+        ->addField('BgCssFilter', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+        ->addField('viewBgImageOnMobile', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+        ->addField('articleImageSize', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+        ->addField('bgParallax', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+    ->addLegend('articleBgLegendVideo', 'layout_legend', PaletteManipulator::POSITION_BEFORE)
+        ->addField('articleVideo', 'articleBgLegendVideo', PaletteManipulator::POSITION_APPEND)
+        ->addField('noBgVideoLoop', 'articleBgLegendVideo', PaletteManipulator::POSITION_APPEND)
+        ->addField('viewBgVideoOnMobile','articleBgLegendVideo', PaletteManipulator::POSITION_APPEND)
+    ->addLegend('articleBgLegendColor', 'layout_legend', PaletteManipulator::POSITION_BEFORE)
+        ->addField('bgColor', 'articleBgLegendColor', PaletteManipulator::POSITION_APPEND)
+        ->addField('fontColor', 'articleBgLegendColor', PaletteManipulator::POSITION_APPEND)
     
     ->applyToPalette('default', 'tl_article');
 
@@ -54,12 +55,6 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['articleImageSize'] = [
     },
     'sql' => "varchar(64) NOT NULL default ''"
 ];
-$GLOBALS['TL_DCA']['tl_article']['fields']['verticalBgShift'] = [
-    'label'     => &$GLOBALS['TL_LANG']['tl_article']['verticalBgShift'],
-    'inputType' => 'text',
-    'eval'      => array('tl_class'=>'w50'),
-    'sql'       => "text NULL"
-];
 $GLOBALS['TL_DCA']['tl_article']['fields']['viewBgVideoOnMobile'] = [ 
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['viewBgVideoOnMobile'], 
     'inputType' => 'checkbox', 
@@ -81,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['noBgVideoLoop'] = [
 $GLOBALS['TL_DCA']['tl_article']['fields']['bgParallax'] = [ 
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['bgParallax'], 
     'inputType' => 'checkbox', 
-    'eval'      => array('tl_class' => 'w50'),
+    'eval'      => array('tl_class' => 'w50 m12'),
     'sql'       => "char(1) NOT NULL default ''" 
 ];
 $GLOBALS['TL_DCA']['tl_article']['fields']['BgCssFilter'] = [
