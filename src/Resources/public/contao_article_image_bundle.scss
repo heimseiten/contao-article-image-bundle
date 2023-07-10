@@ -15,7 +15,7 @@
     &.video .inside { @media(max-width:1023px){ display: var(--background_video_mobile, block); } }
 }
 
-html body .mod_article { position: relative;
+html body #wrapper .mod_article { position: relative;
 	&.article_bg_color { background: var(--article_bg_color, #fff); }
 	&.font_color, 
 	&.font_color .rte, 
