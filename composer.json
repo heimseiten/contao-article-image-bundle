@@ -20,7 +20,7 @@
         "source": "https://github.com/heimseiten/contao-article-image-bundle"
     },
     "require": {
-        "contao/core-bundle": "^5.2",
+        "contao/core-bundle": "^5.0",
         "heimseiten/contao-jarallax-bundle": "^0.0",
         "heimseiten/contao-article-width-height-bundle": "^1.1"
     },
