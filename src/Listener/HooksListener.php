@@ -13,38 +13,51 @@ class HooksListener
 {
     public function onCompileArticle(FrontendTemplate $objTemplate, array $arrData, Module $module): void
     {
-        if ($objTemplate->type == 'article') {
-            $mod_article_before_content_elements = new FrontendTemplate('caib_mod_article_before_content_elements');
-            $mod_article_before_content_elements->articleImage = $arrData['articleImage'];
-            $mod_article_before_content_elements->articleImageSize = $arrData['articleImageSize'];
-            $mod_article_before_content_elements->articleVideo = $arrData['articleVideo'];
-            $mod_article_before_content_elements->noBgVideoLoop = $arrData['noBgVideoLoop'];
-            $mod_article_before_content_elements->viewBgVideoOnMobile = $arrData['viewBgVideoOnMobile'];
-            $mod_article_before_content_elements->viewBgImageOnMobile = $arrData['viewBgImageOnMobile'];
-            $mod_article_before_content_elements->verticalBgShift = $arrData['verticalBgShift'];
-            $mod_article_before_content_elements->bgParallax = $arrData['bgParallax'];
-            $mod_article_before_content_elements->BgCssFilter = $arrData['BgCssFilter'];
-            $elements = $objTemplate->elements;
-            array_unshift($elements, $mod_article_before_content_elements->parse());
-            
-            $objTemplate->elements = $elements;
+        if ($objTemplate->type !== 'article') {
+            return;
         }
+
+        // Null-coalesce every field: not every article row carries all article-image
+        // columns, which otherwise triggers "Undefined array key" warnings on each article.
+        $tpl = new FrontendTemplate('caib_mod_article_before_content_elements');
+        $tpl->articleImage = $arrData['articleImage'] ?? null;
+        $tpl->articleImageSize = $arrData['articleImageSize'] ?? null;
+        $tpl->articleVideo = $arrData['articleVideo'] ?? null;
+        $tpl->noBgVideoLoop = $arrData['noBgVideoLoop'] ?? null;
+        $tpl->viewBgVideoOnMobile = $arrData['viewBgVideoOnMobile'] ?? null;
+        $tpl->viewBgImageOnMobile = $arrData['viewBgImageOnMobile'] ?? null;
+        $tpl->verticalBgShift = $arrData['verticalBgShift'] ?? null;
+        $tpl->bgParallax = $arrData['bgParallax'] ?? null;
+        $tpl->BgCssFilter = $arrData['BgCssFilter'] ?? null;
+
+        $elements = $objTemplate->elements;
+        array_unshift($elements, $tpl->parse());
+
+        $objTemplate->elements = $elements;
     }
 
     public function onParseTemplate(Template $objTemplate)
     {
-        if ($objTemplate->type == 'article') {
-            if ( StringUtil::deserialize($objTemplate->bgColor)[0] ) { 
-                $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->bgColor)[0], StringUtil::deserialize($objTemplate->bgColor)[1]) .';';
-                $objTemplate->class .= ' article_bg_color';
-            }
-            if ( StringUtil::deserialize($objTemplate->fontColor)[0] ) { 
-                $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->fontColor)[0], StringUtil::deserialize($objTemplate->fontColor)[1]) .';';
-                $objTemplate->class .= ' font_color';
-            }
-            if ( $objTemplate->articleImage ) { 
-                $objTemplate->class .= ' has_img';
-            }
+        if ($objTemplate->type !== 'article') {
+            return;
+        }
+
+        // deserialize(..., true) yields an array, so articles without a colour no longer
+        // trigger "array offset on null" warnings on every render.
+        $bgColor = StringUtil::deserialize($objTemplate->bgColor, true);
+        if (!empty($bgColor[0])) {
+            $objTemplate->style .= ' --article_bg_color: ' . getRgbaFromHexAndOpacity($bgColor[0], $bgColor[1] ?? '') . ';';
+            $objTemplate->class .= ' article_bg_color';
+        }
+
+        $fontColor = StringUtil::deserialize($objTemplate->fontColor, true);
+        if (!empty($fontColor[0])) {
+            $objTemplate->style .= ' --font_color: ' . getRgbaFromHexAndOpacity($fontColor[0], $fontColor[1] ?? '') . ';';
+            $objTemplate->class .= ' font_color';
+        }
+
+        if ($objTemplate->articleImage) {
+            $objTemplate->class .= ' has_img';
         }
     }
 }
