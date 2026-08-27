@@ -11,6 +11,7 @@ PaletteManipulator::create()
         ->addField('viewBgImageOnMobile', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
         ->addField('articleImageSize', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
         ->addField('bgParallax', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
+        ->addField('verticalBgShift', 'articleBgLegend', PaletteManipulator::POSITION_APPEND)
     ->addLegend('articleBgLegendVideo', 'layout_legend', PaletteManipulator::POSITION_BEFORE)
         ->addField('articleVideo', 'articleBgLegendVideo', PaletteManipulator::POSITION_APPEND)
         ->addField('noBgVideoLoop', 'articleBgLegendVideo', PaletteManipulator::POSITION_APPEND)
@@ -79,6 +80,16 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['bgParallax'] = [
     'eval'      => array('tl_class' => 'w50 m12'),
     'sql'       => "char(1) NOT NULL default ''" 
 ];
+// Wird vom Listener gelesen und vom Template ausgewertet (margin-top: -X%), war aber nie
+// als DCA-Feld deklariert: Contao hielt die Spalte deshalb fuer verwaist und entfernte sie
+// bei "contao:migrate --with-deletes" — danach meldete jeder Artikel "Undefined array key".
+$GLOBALS['TL_DCA']['tl_article']['fields']['verticalBgShift'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_article']['verticalBgShift'],
+    'inputType' => 'text',
+    'eval'      => array('rgxp' => 'natural', 'maxlength' => 3, 'tl_class' => 'w50'),
+    'sql'       => "text NULL"
+];
+
 $GLOBALS['TL_DCA']['tl_article']['fields']['BgCssFilter'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_article']['BgCssFilter'],
     'inputType' => 'text',
